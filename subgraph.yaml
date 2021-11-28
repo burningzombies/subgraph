@@ -1,0 +1,68 @@
+specVersion: 0.0.2
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: BurningZombiesERC721
+    network: fuji
+    source:
+      address: "0x521AeCF13656C3d1e3E41196c3F966324B3a601f"
+      abi: BurningZombiesERC721
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Approval
+        - ApprovalForAll
+        - OwnershipTransferred
+        - Transfer
+      abis:
+        - name: BurningZombiesERC721
+          file: ./abis/BurningZombiesERC721.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,indexed uint256)
+          handler: handleApproval
+        - event: ApprovalForAll(indexed address,indexed address,bool)
+          handler: handleApprovalForAll
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+        - event: BurnedReflectionDivided(indexed address)
+          handler: handleBurnedReflectionDivided
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: BurningZombiesMarket
+    network: fuji
+    source:
+      address: "0x9E98eb5fcC3aE1AB66257b401EA1F96bcE821Cf9"
+      abi: BurningZombiesMarket
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - ListingCancelled
+        - ListingCreated
+        - OwnershipTransferred
+        - Paused
+        - Sale
+        - Unpaused
+      abis:
+        - name: BurningZombiesMarket
+          file: ./abis/BurningZombiesMarket.json
+      eventHandlers:
+        - event: ListingCancelled(indexed uint256)
+          handler: handleListingCancelled
+        - event: ListingCreated(indexed address,indexed address,indexed uint256,uint256)
+          handler: handleListingCreated
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: Paused(address)
+          handler: handlePaused
+        - event: Sale(indexed address,indexed address,indexed uint256,uint256)
+          handler: handleSale
+        - event: Unpaused(address)
+          handler: handleUnpaused
+      file: ./src/marketplace.ts

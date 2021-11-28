@@ -1,0 +1,53 @@
+type Collection @entity {
+  id: ID!
+  totalSupply: BigInt!
+}
+
+type Zombie @entity {
+  id: ID!
+  name: String!
+  desc: String!
+  owner: Bytes!
+  minter: Bytes!
+  imageURI: String!
+  tokenURI: String!
+  sale: Boolean!
+  price: BigInt!
+  updatedAt: BigInt!
+  mintedAt: BigInt!
+
+  score: BigDecimal!
+
+  # essentials
+  gender: String!
+  background: String!
+  skin: String!
+  mouth: String!
+  eyes: String!
+
+  attributes: [Trait!]!
+  history: [TokenHistory!]!
+}
+
+type Trait @entity {
+  id: ID!
+  type: String!
+  value: String!
+  amount: BigInt!
+}
+
+type TokenHistory @entity {
+  id: ID!
+  tokenId: BigInt!
+  eventType: String!
+  price: BigInt!
+  from: Bytes!
+  to: Bytes!
+  date: BigInt!
+}
+
+type MarketStats @entity {
+  id: ID!
+  highestSale: BigInt!
+  totalVolume: BigInt!
+}
