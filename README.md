@@ -59,6 +59,7 @@ It stores the token's events.
 ## Development
 
 ```shell
+npm run install       # Install dependencies
 npm run codegen       # Generates AssemblyScript types
 npm run build         # Build subgraph
 npm run deploy        # Deploy to network
