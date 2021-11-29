@@ -20,7 +20,6 @@ It stores trait info assigned to tokens.
 
 It stores the token's events.
 
-
 ## Example Queries
 
 ### Querying The Most Valuable Ten Zombies
@@ -55,4 +54,15 @@ It stores the token's events.
     }
   }
 }
+```
+
+## Development
+
+```shell
+npm run codegen       # Generates AssemblyScript types
+npm run build         # Build subgraph
+npm run deploy        # Deploy to network
+npm run create-local  # Create local subgraph (check the host and port in the package.json)
+npm run remove-local  # Remove local subgraph (check the host and port in the package.json)
+npm run deploy-local  # Deploy local subgraph (check the host and port  in the package.json)
 ```
