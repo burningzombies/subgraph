@@ -1,6 +1,6 @@
 {
   "name": "burning-zombies",
-  "license": "MIT",
+  "license": "GPL-3.0",
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
