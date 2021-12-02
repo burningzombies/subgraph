@@ -50,4 +50,5 @@ type MarketStats @entity {
   id: ID!
   highestSale: BigInt!
   totalVolume: BigInt!
+  reflectionBalance: BigInt!
 }

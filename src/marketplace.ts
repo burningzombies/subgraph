@@ -95,6 +95,8 @@ export function handleSale(event: Sale): void {
     stats.highestSale = price;
   }
 
+  let contract = BurningZombiesMarket.bind(event.address);
+  stats.reflectionBalance = contract.reflectionBalance();
   stats.save();
 
   createTokenEvent(
