@@ -244,6 +244,7 @@ export function handleTransfer(event: Transfer): void {
 
     createTokenEvent(tokenId, "Burning", BigInt.zero(), from, to, now);
     updateCollectionInfo(contract);
+    refreshScores(contract);
     log.info("Token burned.", []);
     return;
   }
