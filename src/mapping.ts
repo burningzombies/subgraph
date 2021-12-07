@@ -50,8 +50,8 @@ export const createTokenEvent = (
       .keccak256(
         ByteArray.fromUTF8(
           tokenId.toString() +
-            eventType +
-            price.toString() +
+            // eventType +
+            // price.toString() +
             from.toString() +
             to.toString() +
             date.toString()
