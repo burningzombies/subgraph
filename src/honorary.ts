@@ -13,10 +13,17 @@ import {
 } from "@graphprotocol/graph-ts";
 import {
   BurningZombiesHonoraryERC721,
+  Approval,
+  ApprovalForAll,
+  OwnershipTransferred,
   Transfer,
 } from "../generated/BurningZombiesHonoraryERC721/BurningZombiesHonoraryERC721";
 import { getZeroAddress } from "./mapping";
 import { HonoraryZombie } from "../generated/schema";
+
+export function handleApproval(event: Approval): void {}
+export function handleApprovalForAll(event: ApprovalForAll): void {}
+export function handleOwnershipTransferred(event: OwnershipTransferred): void {}
 
 export function handleTransfer(event: Transfer): void {
   let contract = BurningZombiesHonoraryERC721.bind(event.address);
