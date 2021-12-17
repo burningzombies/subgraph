@@ -29,6 +29,12 @@ type Zombie @entity {
   history: [TokenHistory!]!
 }
 
+type HonoraryZombie @entity {
+  id: ID!
+  name: String!
+  imageURI: String!
+}
+
 type Trait @entity {
   id: ID!
   type: String!

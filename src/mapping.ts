@@ -125,7 +125,7 @@ const refreshScores = (contract: BurningZombiesERC721): void => {
   }
 };
 
-const getIPFSData = (tokenId: BigInt): TypedMap<string, JSONValue> => {
+export const getIPFSData = (tokenId: BigInt): TypedMap<string, JSONValue> => {
   let tokenURI = getBaseURI() + tokenId.toString();
   let hash = tokenURI.split("ipfs://").join("");
   let result = ipfs.cat(hash);

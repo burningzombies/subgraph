@@ -66,3 +66,31 @@ dataSources:
         - event: Unpaused(address)
           handler: handleUnpaused
       file: ./src/marketplace.ts
+  - kind: ethereum/contract
+    name: BurningZombiesHonoraryERC721
+    network: fuji
+    source:
+      address: "0x013f79fA61839E69b6e5Ac331bEc2961d94cCd57"
+      abi: BurningZombiesHonoraryERC721
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Approval
+        - ApprovalForAll
+        - OwnershipTransferred
+        - Transfer
+      abis:
+        - name: BurningZombiesHonoraryERC721
+          file: ./abis/BurningZombiesHonoraryERC721.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,indexed uint256)
+          handler: handleApproval
+        - event: ApprovalForAll(indexed address,indexed address,bool)
+          handler: handleApprovalForAll
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: ./src/honorary.ts
