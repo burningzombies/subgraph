@@ -70,7 +70,7 @@ dataSources:
     name: BurningZombiesHonoraryERC721
     network: fuji
     source:
-      address: "0x710E27ba9Fb1d0BEd65671b1a4fEcf05010C92d7"
+      address: "0xdD0F481e4c7C05d9d8572C50Bb3AA2043Dc76247"
       abi: BurningZombiesHonoraryERC721
     mapping:
       kind: ethereum/events
