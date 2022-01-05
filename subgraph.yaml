@@ -6,7 +6,7 @@ dataSources:
     name: BurningZombiesERC721
     network: fuji
     source:
-      address: "0xFCf61D1B30ccc38a84B8e42BF06DC918e4B7DCA8"
+      address: "0x15Ee4A7a3f9DCe5ABc2Ca40B37729B5d872e90Ef"
       abi: BurningZombiesERC721
     mapping:
       kind: ethereum/events
@@ -36,7 +36,7 @@ dataSources:
     name: BurningZombiesMarket
     network: fuji
     source:
-      address: "0xf04a73b434c5CB65aBD971a9041406CE746Fa5E7"
+      address: "0x90C5C950aC7767C3c4F4BF02f4De88dc44E79cf5"
       abi: BurningZombiesMarket
     mapping:
       kind: ethereum/events
@@ -98,7 +98,7 @@ dataSources:
     name: StakingRewards
     network: fuji
     source:
-      address: "0x532eb478D268d372F4a186c1544AFAca09762545"
+      address: "0xBA96E075D88644d885e760e5Ac1C9e25A6De8D85"
       abi: StakingRewards
     mapping:
       kind: ethereum/events
