@@ -6,7 +6,7 @@ dataSources:
     name: BurningZombiesERC721
     network: fuji
     source:
-      address: "0xf2d0De3d25eBa9D2D84380fDcc7f41A6E4670bD0"
+      address: "0xFCf61D1B30ccc38a84B8e42BF06DC918e4B7DCA8"
       abi: BurningZombiesERC721
     mapping:
       kind: ethereum/events
@@ -36,7 +36,7 @@ dataSources:
     name: BurningZombiesMarket
     network: fuji
     source:
-      address: "0x69db2b671d07E6d000914080763aDF40fF5f6e8B"
+      address: "0xf04a73b434c5CB65aBD971a9041406CE746Fa5E7"
       abi: BurningZombiesMarket
     mapping:
       kind: ethereum/events
@@ -94,3 +94,40 @@ dataSources:
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
       file: ./src/honorary.ts
+  - kind: ethereum/contract
+    name: StakingRewards
+    network: fuji
+    source:
+      address: "0x532eb478D268d372F4a186c1544AFAca09762545"
+      abi: StakingRewards
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - OwnershipTransferred
+        - Recovered
+        - RewardAdded
+        - RewardPaid
+        - RewardsDurationUpdated
+        - Staked
+        - Withdrawn
+      abis:
+        - name: StakingRewards
+          file: ./abis/StakingRewards.json
+      eventHandlers:
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: Recovered(address,uint256)
+          handler: handleRecovered
+        - event: RewardAdded(uint256)
+          handler: handleRewardAdded
+        - event: RewardPaid(indexed address,uint256)
+          handler: handleRewardPaid
+        - event: RewardsDurationUpdated(uint256)
+          handler: handleRewardsDurationUpdated
+        - event: Staked(indexed address,indexed uint256)
+          handler: handleStaked
+        - event: Withdrawn(indexed address,indexed uint256)
+          handler: handleWithdrawn
+      file: ./src/staking.ts

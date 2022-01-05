@@ -29,6 +29,11 @@ type Zombie @entity {
   history: [TokenHistory!]!
 }
 
+type Stake @entity {
+  id: ID!
+  tokens: [Zombie!]!
+}
+
 type HonoraryZombie @entity {
   id: ID!
   name: String!
