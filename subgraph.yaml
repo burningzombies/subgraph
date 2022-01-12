@@ -4,9 +4,9 @@ schema:
 dataSources:
   - kind: ethereum/contract
     name: BurningZombiesERC721
-    network: fuji
+    network: avalanche
     source:
-      address: "0x15Ee4A7a3f9DCe5ABc2Ca40B37729B5d872e90Ef"
+      address: "0xEa2184765Fb2c4254106a1D999ed2eD481d9b702"
       abi: BurningZombiesERC721
     mapping:
       kind: ethereum/events
@@ -34,9 +34,9 @@ dataSources:
       file: ./src/mapping.ts
   - kind: ethereum/contract
     name: BurningZombiesMarket
-    network: fuji
+    network: avalanche
     source:
-      address: "0x90C5C950aC7767C3c4F4BF02f4De88dc44E79cf5"
+      address: "0xC1D8AE4310eF5ff2C5A0242c9FC993E7C06c7f85"
       abi: BurningZombiesMarket
     mapping:
       kind: ethereum/events
@@ -68,9 +68,9 @@ dataSources:
       file: ./src/marketplace.ts
   - kind: ethereum/contract
     name: BurningZombiesHonoraryERC721
-    network: fuji
+    network: avalanche
     source:
-      address: "0x61A1ba470D8e73e4f90d3Feb1dbc26082DcEA99A"
+      address: "0x69d75437e74a931587d41552fBE269deF93FcC92"
       abi: BurningZombiesHonoraryERC721
     mapping:
       kind: ethereum/events
@@ -94,40 +94,3 @@ dataSources:
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
       file: ./src/honorary.ts
-  - kind: ethereum/contract
-    name: StakingRewards
-    network: fuji
-    source:
-      address: "0xBA96E075D88644d885e760e5Ac1C9e25A6De8D85"
-      abi: StakingRewards
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.5
-      language: wasm/assemblyscript
-      entities:
-        - OwnershipTransferred
-        - Recovered
-        - RewardAdded
-        - RewardPaid
-        - RewardsDurationUpdated
-        - Staked
-        - Withdrawn
-      abis:
-        - name: StakingRewards
-          file: ./abis/StakingRewards.json
-      eventHandlers:
-        - event: OwnershipTransferred(indexed address,indexed address)
-          handler: handleOwnershipTransferred
-        - event: Recovered(address,uint256)
-          handler: handleRecovered
-        - event: RewardAdded(uint256)
-          handler: handleRewardAdded
-        - event: RewardPaid(indexed address,uint256)
-          handler: handleRewardPaid
-        - event: RewardsDurationUpdated(uint256)
-          handler: handleRewardsDurationUpdated
-        - event: Staked(indexed address,indexed uint256)
-          handler: handleStaked
-        - event: Withdrawn(indexed address,indexed uint256)
-          handler: handleWithdrawn
-      file: ./src/staking.ts

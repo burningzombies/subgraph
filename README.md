@@ -26,7 +26,7 @@ It stores the token's events.
 
 ```graphql
 {
-  zombies (first: 10, orderBy: score, orderDirection: desc) {
+  zombies(first: 10, orderBy: score, orderDirection: desc) {
     id
     name
     owner
@@ -40,7 +40,7 @@ It stores the token's events.
 
 ```graphql
 {
-  zombies (where:{ name: "Yelena" }) {
+  zombies(where: { name: "Yelena" }) {
     id
     name
     owner
