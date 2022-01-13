@@ -30,7 +30,7 @@ import {
 } from "../generated/schema";
 
 export const getBaseURI = (): string => {
-  return "ipfs://QmTDnVnMYLa8kFGnvW8vtT4Taq2EAZPPBCU3u1rVwqjbGm/";
+  return "ipfs://QmZQAdj2nVJ2FLFatNPAegyKd9FDALsS8XZkxGLtxQGtbz/";
 };
 
 export const getZeroAddress = (): ByteArray => {
