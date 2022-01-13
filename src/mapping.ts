@@ -218,7 +218,7 @@ export function handleTransfer(event: Transfer): void {
       stats.save();
     }
 
-    if (contract.isSaleActive()) refreshScores(contract);
+    refreshScores(contract);
     log.info("New mint.", []);
     return;
   }
