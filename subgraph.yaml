@@ -6,7 +6,7 @@ dataSources:
     name: BurningZombiesERC721
     network: avalanche
     source:
-      address: "0x8B301E92Ed8565786F467c9D4655C8711c26AAfa"
+      address: "0xa9EDaf66c717808A30dfDEaf2490e3147a145fb5"
       abi: BurningZombiesERC721
     mapping:
       kind: ethereum/events
