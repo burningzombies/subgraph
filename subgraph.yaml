@@ -8,6 +8,7 @@ dataSources:
     source:
       address: "0xa9EDaf66c717808A30dfDEaf2490e3147a145fb5"
       abi: BurningZombiesERC721
+      startBlock: 10741999
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -38,6 +39,7 @@ dataSources:
     source:
       address: "0x5500Bc936Ce36324c235e6d3bf99083B618a5F99"
       abi: BurningZombiesMarket
+      startBlock: 10741999
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -70,8 +72,9 @@ dataSources:
     name: BurningZombiesHonoraryERC721
     network: avalanche
     source:
-      address: "0x1B64380C5585DF25e784F08594D65b980A5489F0"
+      address: "0xB7E1155d6cc4b713826694cB25B99f04FA3AEF71"
       abi: BurningZombiesHonoraryERC721
+      startBlock: 10741999
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
