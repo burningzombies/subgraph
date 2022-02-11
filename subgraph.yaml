@@ -6,7 +6,7 @@ dataSources:
     name: BurningZombiesERC721
     network: avalanche
     source:
-      address: "0xa9EDaf66c717808A30dfDEaf2490e3147a145fb5"
+      address: "0x1C273Bd314958b09D78A530d68A4326ed8799F4f"
       abi: BurningZombiesERC721
       startBlock: 10741999
     mapping:
@@ -30,15 +30,15 @@ dataSources:
           handler: handleOwnershipTransferred
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
-        - event: BurnedReflectionDivided(indexed address,indexed uint256)
-          handler: handleBurnedReflectionDivided
+        - event: ReflectionDivided(indexed address,indexed uint256)
+          handler: handleReflectionDivided
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: BurningZombiesMarket
+    name: Market
     network: avalanche
     source:
-      address: "0x5500Bc936Ce36324c235e6d3bf99083B618a5F99"
-      abi: BurningZombiesMarket
+      address: "0xa0c89b8C9b49dcDaC44CDD39907778591f6be916"
+      abi: Market
       startBlock: 10741999
     mapping:
       kind: ethereum/events
@@ -52,8 +52,8 @@ dataSources:
         - Sale
         - Unpaused
       abis:
-        - name: BurningZombiesMarket
-          file: ./abis/BurningZombiesMarket.json
+        - name: Market
+          file: ./abis/Market.json
       eventHandlers:
         - event: ListingCancelled(indexed uint256)
           handler: handleListingCancelled

@@ -1,13 +1,13 @@
 import { Bytes, ByteArray, BigInt } from "@graphprotocol/graph-ts";
 import {
-  BurningZombiesMarket,
+  Market,
   ListingCancelled,
   ListingCreated,
   OwnershipTransferred,
   Paused,
   Sale,
   Unpaused,
-} from "../generated/BurningZombiesMarket/BurningZombiesMarket";
+} from "../generated/Market/Market";
 import { Zombie, MarketStats } from "../generated/schema";
 
 import { getZeroAddress, createTokenEvent } from "./mapping";
@@ -95,7 +95,7 @@ export function handleSale(event: Sale): void {
     stats.highestSale = price;
   }
 
-  let contract = BurningZombiesMarket.bind(event.address);
+  let contract = Market.bind(event.address);
   stats.reflectionBalance = contract.reflectionBalance();
   stats.save();
 

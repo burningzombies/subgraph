@@ -16,7 +16,7 @@ import {
   Approval,
   ApprovalForAll,
   OwnershipTransferred,
-  BurnedReflectionDivided,
+  ReflectionDivided,
   Transfer,
 } from "../generated/BurningZombiesERC721/BurningZombiesERC721";
 
@@ -142,8 +142,8 @@ export const getIPFSData = (tokenId: BigInt): TypedMap<string, JSONValue> => {
 };
 
 export function handleApproval(event: Approval): void {}
-export function handleBurnedReflectionDivided(
-  event: BurnedReflectionDivided
+export function handleReflectionDivided(
+  event: ReflectionDivided
 ): void {}
 export function handleApprovalForAll(event: ApprovalForAll): void {}
 export function handleOwnershipTransferred(event: OwnershipTransferred): void {}
